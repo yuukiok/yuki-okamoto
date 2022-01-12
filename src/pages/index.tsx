@@ -32,12 +32,6 @@ export default function Home() {
         <Topic title="Skill" />
         <Skills />
       </Spacer>
-
-      <div className="flex justify-center items-center gap-x-3">
-        <Github theme={color} />
-        <Linkedin theme={color} />
-        <Twitter theme={color} />
-      </div>
     </>
   )
 }

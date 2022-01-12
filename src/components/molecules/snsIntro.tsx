@@ -25,7 +25,9 @@ export const SnsIntro: NextPage<Props> = ({ id, theme, snsType }) => {
         >
           <div className="flex gap-x-2 mt-2">
             <Github theme={theme} />
-            <div className="flex justify-center items-center">{id}</div>
+            <div className="flex justify-center items-center font-medium">
+              {id}
+            </div>
           </div>
         </a>
       ) : snsType === SNS.LinkedIn ? (

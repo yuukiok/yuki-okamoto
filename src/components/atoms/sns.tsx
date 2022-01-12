@@ -19,7 +19,7 @@ export const Github: NextPage<Props> = ({ theme }) => {
 export const Linkedin: NextPage<Props> = ({ theme }) => {
   return (
     <Image
-      src={`/snsIcon/${theme === 'dark' ? 'white_' : 'black_'}linkedin.svg`}
+      src={`/snsIcon/${theme === 'dark' ? 'white_' : 'black_'}linkedIn.svg`}
       width={30}
       height={30}
       alt="LinkedIn Icon"
