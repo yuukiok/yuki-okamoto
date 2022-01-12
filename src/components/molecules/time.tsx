@@ -29,8 +29,8 @@ export const Time: NextPage<Props> = ({
 }) => {
   return (
     <div className="mb-5">
-      <div className="flex group items-center lg:w-11/12">
-        <div className="bg-white group-hover:bg-black z-10 rounded-full border-4 border-black h-5 w-5 relative" />
+      <div className="flex items-center lg:w-11/12">
+        <div className="bg-white z-10 rounded-full border-4 border-black h-5 w-5 relative" />
         <div
           className={`bg-white ${
             isDone ? '' : ' animate-ping z-10 rounded-full h-5 w-5 absolute'

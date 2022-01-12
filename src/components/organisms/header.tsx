@@ -21,7 +21,7 @@ const Header: NextPage = () => {
           <div>Yuki Okamoto</div>
         </a>
       </Link>
-      <div className="flex items-center gap-x-2 md:gap-x-7">
+      <div className="flex items-center gap-x-3 md:gap-x-7">
         <Link href="/works">
           <a className="hover:opacity-50 font-bold">WORKS</a>
         </Link>
