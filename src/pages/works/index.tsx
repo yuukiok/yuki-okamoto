@@ -2,8 +2,10 @@ import { NextPage } from 'next'
 
 const Index: NextPage = () => {
   return (
-    <div className="pt-14">
-      <div>fgjksajd</div>
+    <div className="w-screen h-screen">
+      <div className="font-bold text-4xl flex justify-center pt-48">
+        Under Construction
+      </div>
     </div>
   )
 }
