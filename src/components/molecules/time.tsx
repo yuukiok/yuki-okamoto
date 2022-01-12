@@ -46,6 +46,7 @@ export const Time: NextPage<Props> = ({
                   }.svg`}
                   width={20}
                   height={20}
+                  alt="Place Icon"
                 />
               </span>
               {title}

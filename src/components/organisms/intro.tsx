@@ -15,6 +15,7 @@ const Intro: NextPage<Props> = ({ theme }) => {
           width={150}
           height={150}
           className="rounded-full"
+          alt="Author Icon"
         />
       </div>
       <div className="justify-center items-center hidden md:flex">
@@ -23,6 +24,7 @@ const Intro: NextPage<Props> = ({ theme }) => {
           width={200}
           height={200}
           className="rounded-full"
+          alt="Author Icon"
         />
       </div>
       <div className="w-fit mx-auto my-1">
