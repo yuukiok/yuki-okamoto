@@ -9,7 +9,6 @@ interface Props {
 }
 
 export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
-  const ogpImage = 'https://twitter.com/yuki_0206_cs/photo'
   const defaultDescription =
     "Yuki Okamoto's work experiences, educations, and skills."
 
@@ -25,22 +24,26 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
       <meta property="og:locale" content="en" />
       <meta property="og:title" content={title} />
       <meta property="og:url" content={`https://yukiok.com${url}`} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="yuki_0206_cs" />
-      <meta name="twitter:image" content={thumbnail} />
       <meta property="og:site_name" content="Yuki Okamoto's Portfolio" />
       <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@yuki_0206_cs" />
+      <meta name="twitter:image" content={thumbnail} />
+      <meta name="twitter:domain" content="yukiok.com" />
+      <meta name="twitter:title" content={title} />
       {isBlogPage ? (
         <>
           <meta name="description" content={description} />
           <meta property="og:description" content={description} />
           <meta property="og:image" content={thumbnail} />
+          <meta name="twitter:description" content={description} />
         </>
       ) : (
         <>
           <meta name="description" content={defaultDescription} />
           <meta property="og:description" content={defaultDescription} />
-          <meta property="og:image" content={ogpImage} />
+          <meta property="og:image" content={thumbnail} />
+          <meta name="twitter:description" content={defaultDescription} />
         </>
       )}
     </Head>
