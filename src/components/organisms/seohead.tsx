@@ -10,7 +10,8 @@ interface Props {
 
 export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
   const ogpImage = 'https://twitter.com/yuki_0206_cs/photo'
-  const defaultDescription = "Yuki Okamoto's portfolio site"
+  const defaultDescription =
+    "Yuki Okamoto's work experiences, educations, and skills."
 
   const router = useRouter()
   const path = router.asPath
@@ -22,7 +23,7 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
     <Head>
       <title>{title}</title>
       <meta property="og:locale" content="en" />
-      <meta property="og:title" content="Yuki's Portfolio" />
+      <meta property="og:title" content={title} />
       <meta property="og:url" content={`https://yukiok.com${url}`} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="yuki_0206_cs" />
