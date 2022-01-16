@@ -16,7 +16,7 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
   const path = router.asPath
   const isBlogPage = /\/blogs\/.+$/.test(path)
 
-  const thumbnail = '/s_my_icon.jpeg'
+  const thumbnail = '/portfolio.jpg'
 
   return (
     <Head>
@@ -26,7 +26,8 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
       <meta property="og:url" content={`https://yukiok.com${url}`} />
       <meta property="og:site_name" content="Yuki Okamoto's Portfolio" />
       <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
+      <meta property="og:image" content={thumbnail} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@yuki_0206_cs" />
       <meta name="twitter:image" content={thumbnail} />
       <meta name="twitter:domain" content="yukiok.com" />
@@ -35,14 +36,12 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
         <>
           <meta name="description" content={description} />
           <meta property="og:description" content={description} />
-          <meta property="og:image" content={thumbnail} />
           <meta name="twitter:description" content={description} />
         </>
       ) : (
         <>
           <meta name="description" content={defaultDescription} />
           <meta property="og:description" content={defaultDescription} />
-          <meta property="og:image" content={thumbnail} />
           <meta name="twitter:description" content={defaultDescription} />
         </>
       )}
