@@ -11,7 +11,7 @@ const Intro: NextPage<Props> = ({ theme }) => {
     <div className="">
       <div className="flex justify-center items-center md:hidden">
         <Image
-          src="/my_icon.jpg"
+          src="/s_my_icon.jpeg"
           width={150}
           height={150}
           className="rounded-full"
@@ -20,7 +20,7 @@ const Intro: NextPage<Props> = ({ theme }) => {
       </div>
       <div className="justify-center items-center hidden md:flex">
         <Image
-          src="/my_icon.jpg"
+          src="/s_my_icon.jpeg"
           width={200}
           height={200}
           className="rounded-full"

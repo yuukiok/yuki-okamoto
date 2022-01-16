@@ -11,6 +11,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@500&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" href="snowman.png" />
         </Head>
         <body>
           <Main />
