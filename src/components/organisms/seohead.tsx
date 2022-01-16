@@ -24,7 +24,6 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
       <meta property="og:locale" content="en" />
       <meta property="og:title" content="Yuki's Portfolio" />
       <meta property="og:url" content={`https://yukiok.com${url}`} />
-      <link rel="apple-touch-icon" href="apple-touch-icon.png" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="yuki_0206_cs" />
       <meta name="twitter:image" content={thumbnail} />
