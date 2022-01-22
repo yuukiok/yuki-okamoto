@@ -33,6 +33,7 @@ const Index: NextPage = () => {
     target?.scrollTo(10000, 0)
   }, [])
   const [{ data, fetching, error }] = useQuery({ query: GET_CURRENT_USER })
+  console.log(data)
   if (fetching) return <p>Loading...</p>
   if (error) return <p>Error: {JSON.stringify(error)}</p>
   const weeksWeed = data.user.contributionsCollection.contributionCalendar.weeks

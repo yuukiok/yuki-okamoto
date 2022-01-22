@@ -3,20 +3,8 @@ import type { AppProps } from 'next/app'
 import Header from '../components/organisms/header'
 import Footer from '../components/organisms/footer'
 import { ThemeProvider } from 'next-themes'
-import { createClient, Provider } from 'urql'
-
-const GITHUB_BASE_URL = 'https://api.github.com/graphql'
-
-const client = createClient({
-  url: GITHUB_BASE_URL,
-  fetchOptions: () => {
-    return {
-      headers: {
-        authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
-      },
-    }
-  },
-})
+import { Provider } from 'urql'
+import { client } from '../lib/urqlClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
