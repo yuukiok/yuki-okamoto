@@ -3,6 +3,8 @@ import { useQuery } from 'urql'
 import { withUrqlClient } from 'next-urql'
 import Image from 'next/image'
 import DayContribution from '../../components/atoms/dayContribution'
+import WeekContributions from '../../components/molecules/weekContributions'
+import Spacer from '../../components/layout/spacer'
 
 // const GET_CURRENT_USER = `
 //   query {
@@ -25,8 +27,10 @@ const GET_CURRENT_USER = `
           colors
           totalContributions
           weeks {
+            firstDay
             contributionDays {
               color
+              contributionCount
               date
             }
           }
@@ -40,36 +44,30 @@ const Index: NextPage = () => {
   const [{ data, fetching, error }] = useQuery({ query: GET_CURRENT_USER })
   if (fetching) return <p>Loading...</p>
   if (error) return <p>Error: {JSON.stringify(error)}</p>
-  const weekWeed = data.user.contributionsCollection.contributionCalendar.weeks
-  const numWeeks = weekWeed.length // 53
-  console.log(weekWeed)
-  const numDays = weekWeed[0].contributionDays.length // 7
-  console.log(numDays)
+  const weeksWeed = data.user.contributionsCollection.contributionCalendar.weeks
+  const numWeeks = weeksWeed.length // 53
+  // console.log(weeksWeed)
+  const numDays = weeksWeed[0].contributionDays.length // 7
+  // console.log(numDays)
   // const dayWeed = weekWeed.contributionDays[0]
   // console.log(dayWeed)
   // const url = data.viewer.avatarUrl
   const num = 10
 
   return (
-    <div className="w-screen h-screen">
+    <div className="">
       <div className="font-bold text-4xl flex justify-center pt-48">
         Under Construction
       </div>
       {/* params */}
       {/* List of 53 column */}
-
-      <div className="flex">
-        <div className="">
-          {[...Array(7)].map((x, i) => (
-            <DayContribution key={i} />
+      <Spacer>
+        <div className="flex overflow-x-auto">
+          {weeksWeed.map((weekWeed: any) => (
+            <WeekContributions key={weekWeed.firstDay} {...weekWeed} />
           ))}
         </div>
-        <div className="">
-          {[...Array(7)].map((x, i) => (
-            <DayContribution key={i} />
-          ))}
-        </div>
-      </div>
+      </Spacer>
     </div>
   )
 }
