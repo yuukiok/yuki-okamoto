@@ -8,7 +8,7 @@ const userName = 'YukiOkamoto0206'
 
 const GET_CURRENT_USER = `
   query {
-    user(login: ${userName}){
+    user(login: "${userName}"){
       contributionsCollection {
         contributionCalendar {
           colors
