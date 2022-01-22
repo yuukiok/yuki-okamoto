@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import { useQuery } from 'urql'
 import { withUrqlClient } from 'next-urql'
 import Image from 'next/image'
+import DayContribution from '../../components/atoms/dayContribution'
 
 // const GET_CURRENT_USER = `
 //   query {
@@ -47,6 +48,7 @@ const Index: NextPage = () => {
   // const dayWeed = weekWeed.contributionDays[0]
   // console.log(dayWeed)
   // const url = data.viewer.avatarUrl
+  const num = 10
 
   return (
     <div className="w-screen h-screen">
@@ -55,6 +57,19 @@ const Index: NextPage = () => {
       </div>
       {/* params */}
       {/* List of 53 column */}
+
+      <div className="flex">
+        <div className="">
+          {[...Array(7)].map((x, i) => (
+            <DayContribution key={i} />
+          ))}
+        </div>
+        <div className="">
+          {[...Array(7)].map((x, i) => (
+            <DayContribution key={i} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
