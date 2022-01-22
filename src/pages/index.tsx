@@ -1,19 +1,27 @@
 import { useTheme } from 'next-themes'
 import Hero from '../components/organisms/hero'
 import Intro from '../components/organisms/intro'
-import { Github, Linkedin, Twitter } from '../components/atoms/sns'
 import { Timeline } from '../components/organisms/timeline'
 import { SEOHead } from '../components/organisms/seohead'
 import { useRouter } from 'next/router'
 import { Skills } from '../components/organisms/skills'
 import Spacer from '../components/layout/spacer'
 import Topic from '../components/atoms/topic'
+import { GetStaticProps } from 'next'
+import { client, GET_CURRENT_USER } from '../lib/urqlClient'
+import React, { useEffect } from 'react'
+import WeekContributions from '../components/molecules/weekContributions'
 
-export default function Home() {
+export default function Home({ data }: any) {
   const { theme } = useTheme()
   const color = theme == undefined ? 'dark' : theme
   const router = useRouter()
   const url = router.asPath
+  const weeksWeed = data.user.contributionsCollection.contributionCalendar.weeks
+  useEffect(() => {
+    let target = document.getElementById('scroll-inner')
+    target?.scrollTo(10000, 0)
+  }, [])
 
   return (
     <>
@@ -31,7 +39,24 @@ export default function Home() {
       <Spacer>
         <Topic title="Skill" />
         <Skills />
+
+        <Topic title="Contributions" className="my-3" />
+        <div className="flex overflow-x-auto" id="scroll-inner">
+          {weeksWeed.map((weekWeed: any) => (
+            <WeekContributions key={weekWeed.firstDay} {...weekWeed} />
+          ))}
+        </div>
       </Spacer>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { data } = await client.query(GET_CURRENT_USER).toPromise()
+  return {
+    props: {
+      data,
+      revalidate: 10,
+    },
+  }
 }
