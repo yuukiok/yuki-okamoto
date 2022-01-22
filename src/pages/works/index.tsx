@@ -1,13 +1,9 @@
 import { NextPage } from 'next'
-import { useQuery } from 'urql'
-import WeekContributions from '../../components/molecules/weekContributions'
-import Spacer from '../../components/layout/spacer'
-import { useEffect } from 'react'
 
 const Index: NextPage = () => {
   return (
     <div>
-      <div className="font-bold text-4xl flex justify-center pt-48">
+      <div className="font-bold text-4xl flex justify-center pt-48 h-screen">
         Under Construction
       </div>
     </div>
