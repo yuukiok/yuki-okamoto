@@ -7,31 +7,21 @@ import { useRouter } from 'next/router'
 import { Skills } from '../components/organisms/skills'
 import Spacer from '../components/layout/spacer'
 import Topic from '../components/atoms/topic'
-import { GetStaticProps, GetServerSideProps } from 'next'
-import { client, GET_CURRENT_USER, ssrCache } from '../lib/urqlClient'
+import { GetStaticProps } from 'next'
+import { client, GET_CURRENT_USER } from '../lib/urqlClient'
 import React, { useEffect } from 'react'
 import WeekContributions from '../components/molecules/weekContributions'
-import { useQuery } from 'urql'
 
 export default function Home({ data }: any) {
   const { theme } = useTheme()
   const color = theme == undefined ? 'dark' : theme
   const router = useRouter()
   const url = router.asPath
-  console.log(data)
   const weeksWeed = data.user.contributionsCollection.contributionCalendar.weeks
-  console.log(weeksWeed)
   useEffect(() => {
     let target = document.getElementById('scroll-inner')
     target?.scrollTo(10000, 0)
   }, [])
-  // const [{ data, fetching, error }] = useQuery({
-  //   query: GET_CURRENT_USER,
-  //   variables: { info },
-  // })
-  // console.log(data)
-  // if (fetching) return <p>Loading...</p>
-  // if (error) return <p>Error: {JSON.stringify(error)}</p>
 
   return (
     <>
@@ -61,20 +51,12 @@ export default function Home({ data }: any) {
   )
 }
 
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   // const { data } = await client.query(GET_CURRENT_USER).toPromise()
-//   await client.query(GET_CURRENT_USER).toPromise()
-//   console.log('data: ', ssrCache)
-//   return {
-//     props: { data: { urqlState: ssrCache.extractData() } },
-//     revalidate: 600,
-//   }
-// }
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data } = await client.query(GET_CURRENT_USER).toPromise()
   return {
     props: {
       data,
+      revalidate: 10,
     },
   }
 }
