@@ -33,9 +33,11 @@ const DayContribution: React.FC<Props> = ({
           <div className={`bg-green-400 ${name_of_class}`} />
         )}
       </div>
-      <div className="absolute invisible peer-hover:visible z-10 bg-gray-400 px-1 py-0.5 rounded-md text-sm text-center">
-        <div>{contributionCount} contributions</div>
-        <div>{date}</div>
+      <div className="absolute invisible peer-hover:visible peer-hover:fixed peer-hover:bottom-3 peer-hover:right-3 z-50">
+        <div className="bg-gray-400 px-1 py-0.5 rounded-md text-sm text-center">
+          <div>{contributionCount} contributions</div>
+          <div>{date}</div>
+        </div>
       </div>
     </div>
   )
