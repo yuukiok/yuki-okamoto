@@ -17,10 +17,10 @@ const DayContribution: React.FC<Props> = ({
   contributionCount,
   date,
 }) => {
-  const name_of_class = 'relative h-4 w-4 my-1 ml-1 rounded-sm'
+  const name_of_class = 'h-4 w-4 my-1 ml-1 rounded-sm'
   return (
     <div>
-      <div className="peer">
+      <div className="peer relative">
         {color == Color.NONE ? (
           <div className={`bg-green-50 ${name_of_class}`} />
         ) : color == Color.FIRST_QUARTILE ? (

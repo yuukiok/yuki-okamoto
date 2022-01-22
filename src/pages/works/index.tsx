@@ -5,6 +5,7 @@ import Image from 'next/image'
 import DayContribution from '../../components/atoms/dayContribution'
 import WeekContributions from '../../components/molecules/weekContributions'
 import Spacer from '../../components/layout/spacer'
+import { useEffect } from 'react'
 
 // const GET_CURRENT_USER = `
 //   query {
@@ -41,6 +42,10 @@ const GET_CURRENT_USER = `
 `
 
 const Index: NextPage = () => {
+  useEffect(() => {
+    let target = document.getElementById('scroll-inner')
+    target?.scrollTo(10000, 0)
+  }, [])
   const [{ data, fetching, error }] = useQuery({ query: GET_CURRENT_USER })
   if (fetching) return <p>Loading...</p>
   if (error) return <p>Error: {JSON.stringify(error)}</p>
@@ -59,10 +64,8 @@ const Index: NextPage = () => {
       <div className="font-bold text-4xl flex justify-center pt-48">
         Under Construction
       </div>
-      {/* params */}
-      {/* List of 53 column */}
       <Spacer>
-        <div className="flex overflow-x-auto">
+        <div className="flex overflow-x-auto" id="scroll-inner">
           {weeksWeed.map((weekWeed: any) => (
             <WeekContributions key={weekWeed.firstDay} {...weekWeed} />
           ))}
