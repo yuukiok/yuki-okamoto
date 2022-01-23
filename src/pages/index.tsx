@@ -11,6 +11,7 @@ import { GetStaticProps } from 'next'
 import { client, GET_CURRENT_USER } from '../lib/urqlClient'
 import React, { useEffect } from 'react'
 import WeekContributions from '../components/molecules/weekContributions'
+import Link from 'next/link'
 
 export default function Home({ data }: any) {
   const { theme } = useTheme()
@@ -18,6 +19,8 @@ export default function Home({ data }: any) {
   const router = useRouter()
   const url = router.asPath
   const weeksWeed = data.user.contributionsCollection.contributionCalendar.weeks
+  const totalContributions =
+    data.user.contributionsCollection.contributionCalendar.totalContributions
   useEffect(() => {
     let target = document.getElementById('scroll-inner')
     target?.scrollTo(10000, 0)
@@ -39,11 +42,20 @@ export default function Home({ data }: any) {
       <Spacer>
         <Topic title="Skill" />
         <Skills />
-        <Topic title="Contributions" className="my-3" />
-        <div className="flex overflow-x-auto" id="scroll-inner">
-          {weeksWeed.map((weekWeed: any) => (
-            <WeekContributions key={weekWeed.firstDay} {...weekWeed} />
-          ))}
+        <div className="hidden lg:block">
+          <Link href="https://github.com/YukiOkamoto0206">
+            <a target="_blank" className="inline-block	">
+              <Topic
+                title={`${totalContributions} Contributions`}
+                className="my-3"
+              />
+            </a>
+          </Link>
+          <div className="flex overflow-x-auto" id="scroll-inner">
+            {weeksWeed.map((weekWeed: any) => (
+              <WeekContributions key={weekWeed.firstDay} {...weekWeed} />
+            ))}
+          </div>
         </div>
       </Spacer>
     </div>

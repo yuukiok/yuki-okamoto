@@ -1,16 +1,8 @@
-import {
-  createClient,
-  cacheExchange,
-  dedupExchange,
-  fetchExchange,
-  ssrExchange,
-} from 'urql'
+import { createClient } from 'urql'
 
 const GITHUB_BASE_URL = 'https://api.github.com/graphql'
 
-const isServerSide = typeof window === 'undefined'
-const ssrCache = ssrExchange({ isClient: !isServerSide })
-const client = createClient({
+export const client = createClient({
   url: GITHUB_BASE_URL,
   fetchOptions: () => {
     return {
@@ -19,9 +11,7 @@ const client = createClient({
       },
     }
   },
-  exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
 })
-export { client, ssrCache }
 
 const userName = 'YukiOkamoto0206'
 export const GET_CURRENT_USER = `
