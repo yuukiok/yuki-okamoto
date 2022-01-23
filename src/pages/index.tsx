@@ -24,7 +24,7 @@ export default function Home({ data }: any) {
   }, [])
 
   return (
-    <>
+    <div className="">
       <SEOHead title="Yuki Okamoto - Homepage" url={url} />
       <div className="pt-14"></div>
       <Hero />
@@ -39,7 +39,6 @@ export default function Home({ data }: any) {
       <Spacer>
         <Topic title="Skill" />
         <Skills />
-
         <Topic title="Contributions" className="my-3" />
         <div className="flex overflow-x-auto" id="scroll-inner">
           {weeksWeed.map((weekWeed: any) => (
@@ -47,11 +46,11 @@ export default function Home({ data }: any) {
           ))}
         </div>
       </Spacer>
-    </>
+    </div>
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query(GET_CURRENT_USER).toPromise()
   return {
     props: {

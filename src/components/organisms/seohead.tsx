@@ -21,6 +21,10 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
   return (
     <Head>
       <title>{title}</title>
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+      />
       <meta property="og:locale" content="en" />
       <meta property="og:title" content={title} />
       <meta property="og:url" content={`https://yukiok.com${url}`} />
