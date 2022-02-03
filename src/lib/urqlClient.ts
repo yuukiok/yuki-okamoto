@@ -1,4 +1,4 @@
-import { createClient } from 'urql'
+import { createClient, gql } from 'urql'
 
 const GITHUB_BASE_URL = 'https://api.github.com/graphql'
 
@@ -14,7 +14,7 @@ export const client = createClient({
 })
 
 const userName = 'YukiOkamoto0206'
-export const GET_CURRENT_USER = `
+export const GET_CURRENT_USER = gql`
   query {
     user(login: "${userName}"){
       contributionsCollection {
@@ -30,6 +30,27 @@ export const GET_CURRENT_USER = `
             }
           }
         }
+      }
+    }
+  }
+`
+
+export const client_works = createClient({
+  url: 'https://api-us-west-2.graphcms.com/v2/ckyqvjyi41aye01xx7pzu4fqq/master',
+})
+
+export const GET_WORKS_DATA = gql`
+  query {
+    work {
+      id
+      title
+      image {
+        documentInStages {
+          url
+        }
+      }
+      content {
+        html
       }
     }
   }
