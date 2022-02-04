@@ -1,13 +1,13 @@
 import { GetStaticProps, NextPage } from 'next'
 import { client_works, GET_WORKS_DATA } from '../../lib/urqlClient'
+import Work from '../../components/organisms/work'
 
 const Index: NextPage<any> = ({ data }) => {
-  console.log(data)
+  const works = data.work
+  console.log(works)
   return (
-    <div>
-      <div className="font-bold text-4xl flex justify-center pt-48 h-screen">
-        Under Construction
-      </div>
+    <div className="pt-20">
+      {works && works.map((work: any) => <Work key={work.id} {...work} />)}
     </div>
   )
 }
