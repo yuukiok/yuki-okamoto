@@ -58,7 +58,7 @@ export const GET_WORKS_DETAILS = gql`
 
 export const GET_WORKS_DATA = gql`
   query MyQuery {
-    work {
+    work(orderBy: id_DESC) {
       id
       title
       image {
