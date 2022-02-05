@@ -36,10 +36,10 @@ export const GET_CURRENT_USER = gql`
 `
 
 export const client_works = createClient({
-  url: 'https://api-us-west-2.graphcms.com/v2/ckyqvjyi41aye01xx7pzu4fqq/master',
+  url: process.env.NEXT_PUBLIC_GRAPHCMS_API as string,
 })
 
-export const GET_WORKS_DATA = gql`
+export const GET_WORKS_DETAILS = gql`
   query {
     work {
       id
@@ -51,6 +51,20 @@ export const GET_WORKS_DATA = gql`
       }
       content {
         html
+      }
+    }
+  }
+`
+
+export const GET_WORKS_DATA = gql`
+  query MyQuery {
+    work(orderBy: id_DESC) {
+      id
+      title
+      image {
+        url
+        width
+        height
       }
     }
   }
