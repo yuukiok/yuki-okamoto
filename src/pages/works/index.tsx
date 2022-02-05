@@ -3,6 +3,7 @@ import { client_works, GET_WORKS_DATA } from '../../lib/urqlClient'
 import Work from '../../components/organisms/work'
 import Image from 'next/image'
 import Spacer from '../../components/layout/spacer'
+import Link from 'next/link'
 
 function GraphCMSImageLoader({ src, width }: any) {
   const relativeSrc = (src: any) => src.split('/').pop()
@@ -28,25 +29,31 @@ const Index: NextPage<Props> = ({ work }) => {
   console.log(works)
   return (
     <Spacer>
-      <div className="pt-20 mx-auto">
+      <ul className="pt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {works &&
           works.map((work: Work) => {
             return (
-              <div key={work.id} className="grid-x-2">
-                <Image
-                  loader={GraphCMSImageLoader}
-                  src={work.image.url}
-                  width={300}
-                  height={200}
-                  className="rounded-lg"
-                />
-                <div className="font-semibold text-lg mx-auto">
-                  {work.title}
-                </div>
-              </div>
+              <li key={work.id} className="hover:scale-110">
+                <Link href="https://google.com">
+                  <a>
+                    <div className="">
+                      <Image
+                        loader={GraphCMSImageLoader}
+                        src={work.image.url}
+                        width={300}
+                        height={200}
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="font-semibold text-lg text-center">
+                      {work.title}
+                    </div>
+                  </a>
+                </Link>
+              </li>
             )
           })}
-      </div>
+      </ul>
     </Spacer>
   )
 }
