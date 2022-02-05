@@ -6,8 +6,9 @@
 * TailwindCSS
 * Urql
 * GitHub API v4
+* GraphCMS
 
-To improve performance Using SSG/ISR for fetching GitHub API data.
+To improve performance Using SSG/ISR for fetching GitHub API and GraphCMS data.
 
 ## Getting Started
 
