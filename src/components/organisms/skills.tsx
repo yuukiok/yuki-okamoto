@@ -61,7 +61,7 @@ export const Skills: NextPage = () => {
     { id: 26, skill: 'Sourcetree', imageurl: <FaSourcetree size={size} /> },
   ]
   return (
-    <div className="flex overflow-x-auto">
+    <div className="flex overflow-x-auto ">
       {skills &&
         skills.map((skill) => (
           <Skill key={skill.id} skill={skill.skill} url={skill.imageurl} />
