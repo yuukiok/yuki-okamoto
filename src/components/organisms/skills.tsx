@@ -16,12 +16,18 @@ import {
   SiGoland,
   SiPython,
   SiMysql,
+  SiC,
   SiJava,
   SiAndroid,
   SiSwift,
   SiIos,
+  SiWordpress,
+  SiNpm,
+  SiYarn,
+  SiGithub,
+  SiBitbucket,
 } from 'react-icons/si'
-import { FaReact } from 'react-icons/fa'
+import { FaReact, FaSourcetree } from 'react-icons/fa'
 
 export const Skills: NextPage = () => {
   const size = 64
@@ -42,10 +48,17 @@ export const Skills: NextPage = () => {
     { id: 13, skill: 'Golang', imageurl: <SiGoland size={size} /> },
     { id: 14, skill: 'Python', imageurl: <SiPython size={size} /> },
     { id: 15, skill: 'Mysql', imageurl: <SiMysql size={size} /> },
-    { id: 16, skill: 'Java', imageurl: <SiJava size={size} /> },
-    { id: 17, skill: 'Android', imageurl: <SiAndroid size={size} /> },
-    { id: 18, skill: 'Swift', imageurl: <SiSwift size={size} /> },
-    { id: 19, skill: 'Ios', imageurl: <SiIos size={size} /> },
+    { id: 16, skill: 'C', imageurl: <SiC size={size} /> },
+    { id: 17, skill: 'Java', imageurl: <SiJava size={size} /> },
+    { id: 18, skill: 'Android', imageurl: <SiAndroid size={size} /> },
+    { id: 19, skill: 'Swift', imageurl: <SiSwift size={size} /> },
+    { id: 20, skill: 'Ios', imageurl: <SiIos size={size} /> },
+    { id: 21, skill: 'Wordpress', imageurl: <SiWordpress size={size} /> },
+    { id: 22, skill: 'Npm', imageurl: <SiNpm size={size} /> },
+    { id: 23, skill: 'Yarn', imageurl: <SiYarn size={size} /> },
+    { id: 24, skill: 'Github', imageurl: <SiGithub size={size} /> },
+    { id: 25, skill: 'Bitbucket', imageurl: <SiBitbucket size={size} /> },
+    { id: 26, skill: 'Sourcetree', imageurl: <FaSourcetree size={size} /> },
   ]
   return (
     <div className="flex overflow-x-auto">
