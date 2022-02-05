@@ -4,6 +4,7 @@ import Work from '../../components/organisms/work'
 import Image from 'next/image'
 import Spacer from '../../components/layout/spacer'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function GraphCMSImageLoader({ src, width }: any) {
   const relativeSrc = (src: any) => src.split('/').pop()
@@ -26,25 +27,25 @@ type Image = {
 
 const Index: NextPage<Props> = ({ work }) => {
   const works = work
-  console.log(works)
+  const router = useRouter()
   return (
     <Spacer>
       <ul className="pt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {works &&
           works.map((work: Work) => {
             return (
-              <li key={work.id} className="hover:scale-110">
-                <Link href="https://google.com">
+              <li key={work.id} className="hover:scale-110 mx-auto">
+                <Link href={`${router.asPath}/${work.id}`}>
                   <a>
-                    <div className="">
-                      <Image
-                        loader={GraphCMSImageLoader}
-                        src={work.image.url}
-                        width={300}
-                        height={200}
-                        className="rounded-lg"
-                      />
-                    </div>
+                    <Image
+                      loader={GraphCMSImageLoader}
+                      src={work.image.url}
+                      priority={true}
+                      quality={10}
+                      width={300}
+                      height={200}
+                      className="rounded-lg"
+                    />
                     <div className="font-semibold text-lg text-center">
                       {work.title}
                     </div>
