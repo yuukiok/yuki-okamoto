@@ -49,6 +49,7 @@ const Index: NextPage<Props> = ({ work }) => {
                       width={300}
                       height={200}
                       className="rounded-lg"
+                      alt="portfolio image"
                     />
                     <div className="font-semibold text-lg text-center">
                       {work.title}
