@@ -28,7 +28,7 @@ export default function Home({ data }: any) {
 
   return (
     <div className="">
-      <SEOHead title="Yuki Okamoto - Homepage" url={url} />
+      <SEOHead title="Yuki Okamoto - Home Page" url={url} />
       <div className="pt-14"></div>
       <Hero />
       <div className="w-full md:flex mt-4 lg:mt-10">
