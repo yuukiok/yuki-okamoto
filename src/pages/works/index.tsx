@@ -17,6 +17,7 @@ type Props = {
 type Work = {
   id: string
   title: string
+  url: string
   image: Image
 }
 type Image = {
@@ -27,16 +28,19 @@ type Image = {
 
 const Index: NextPage<Props> = ({ work }) => {
   const works = work
-  const router = useRouter()
+  // const router = useRouter()
   return (
     <Spacer>
-      <ul className="pt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="pt-20 text-xl md:text-5xl font-extrabold border-b-4 w-fit pb-1">
+        Works
+      </div>
+      <ul className="py-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {works &&
           works.map((work: Work) => {
             return (
               <li key={work.id} className="hover:scale-110 mx-auto">
-                <Link href={`${router.asPath}/${work.id}`}>
-                  <a>
+                <Link href={work.url}>
+                  <a target="_blank">
                     <Image
                       loader={GraphCMSImageLoader}
                       src={work.image.url}

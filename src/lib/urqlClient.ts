@@ -61,6 +61,7 @@ export const GET_WORKS_DATA = gql`
     work(orderBy: id_DESC) {
       id
       title
+      url
       image {
         url
         width
