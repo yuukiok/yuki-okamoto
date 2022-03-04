@@ -13,6 +13,20 @@ export const Timeline: NextPage<Props> = ({ theme }) => {
         <div className="list-none m-0 p-0">
           <Time
             theme={theme}
+            icon={IconImage.COMPANY}
+            title="dKomplex"
+            from_date="Feb 2022"
+            to_date="Present"
+            url="https://www.dkomplex.com/"
+          >
+            <div>
+              Developer Intern to support the group of a veteran-owned startup
+              by converting business processes and requirements into software
+              updates
+            </div>
+          </Time>
+          <Time
+            theme={theme}
             icon={IconImage.SCHOOL}
             title="California State University, Monterey Bay"
             from_date="Jan 2022"
@@ -56,7 +70,7 @@ export const Timeline: NextPage<Props> = ({ theme }) => {
           >
             <div>
               Completed requirements to transfer to California State University
-              in Computer Science (GPA 3.83/4.00).
+              in Computer Science.
             </div>
           </Time>
         </div>
