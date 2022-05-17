@@ -6,8 +6,12 @@ export const carriers = [
     from_date: 'Feb 2022',
     to_date: 'Present',
     url: 'https://www.dkomplex.com/',
-    children:
-      'Data Scientist to support the group of a veteran-owned startup by converting business processes and requirements into software updates.',
+    children: (
+      <div>
+        Data Scientist to support the group of a veteran-owned startup by
+        converting business processes and requirements into software updates.
+      </div>
+    ),
   },
   {
     icon: IconImage.SCHOOL,
@@ -15,8 +19,12 @@ export const carriers = [
     from_date: 'Jan 2022',
     to_date: 'Present',
     url: 'https://csumb.edu/',
-    children:
-      'Candidate for Bachelor of Science in Computer Science, expected to graduate in December 2023.',
+    children: (
+      <div>
+        Candidate for Bachelor of Science in Computer Science, expected to
+        graduate in December 2023.
+      </div>
+    ),
   },
   {
     icon: IconImage.COMPANY,
@@ -24,7 +32,7 @@ export const carriers = [
     from_date: 'Jun 2020',
     to_date: 'Present',
     url: 'https://www.crunchtimer.jp/',
-    children: 'Front-End and Mobile Application Engineer.',
+    children: <div>Front-End and Mobile Application Engineer.</div>,
   },
   {
     icon: IconImage.SCHOOL,
@@ -32,6 +40,6 @@ export const carriers = [
     from_date: 'Aug 2019',
     to_date: 'Dec 2021',
     url: 'https://www2.palomar.edu/',
-    children: 'Community college majoring Computer Science.',
+    children: <div>Community college majoring Computer Science.</div>,
   },
 ]
