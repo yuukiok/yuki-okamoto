@@ -13,8 +13,9 @@ export const Timeline: NextPage<Props> = ({ theme }) => {
         <div className="border-r-4 border-black absolute h-full top-0 ml-2" />
         <div className="list-none m-0 p-0">
           {carriers &&
-            carriers.map((carrier) => (
+            carriers.map((carrier, index) => (
               <Time
+                key={index}
                 theme={theme}
                 icon={carrier.icon}
                 title={carrier.title}
