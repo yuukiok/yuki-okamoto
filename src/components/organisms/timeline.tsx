@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import { carriers } from '../../utils/carrier'
-import { Time, IconImage } from '../molecules/time'
+import { Time } from '../molecules/time'
 
 type Props = {
   theme: string

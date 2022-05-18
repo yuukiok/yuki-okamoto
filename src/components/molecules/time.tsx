@@ -25,7 +25,6 @@ export const Time: NextPage<Props> = ({
   from_date,
   to_date,
   url,
-  isDone = false,
 }) => {
   return (
     <div className="mb-5">
@@ -33,7 +32,9 @@ export const Time: NextPage<Props> = ({
         <div className="bg-white z-10 rounded-full border-4 border-black h-5 w-5 relative" />
         <div
           className={`bg-white ${
-            isDone ? '' : ' animate-ping z-10 rounded-full h-5 w-5 absolute'
+            to_date !== 'Present'
+              ? ''
+              : ' animate-ping z-10 rounded-full h-5 w-5 absolute'
           } `}
         />
         <div className="flex-1 ml-4 z-10 font-medium">
