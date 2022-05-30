@@ -7,7 +7,7 @@ type Props = {
   title: string
   children: JSX.Element
   from_date: string
-  to_date: string
+  to_date?: string
   url: string
   isDone?: boolean
 }
@@ -57,7 +57,7 @@ export const Time: NextPage<Props> = ({
               </span>
               <div className="inline">{title}</div>
             </a>
-            <div className=" text-sm">{`${from_date} - ${to_date}`}</div>
+            <div className=" text-sm">{`${from_date} ${to_date === undefined ? '' : `- ${to_date}` }`}</div>
             <div className="text-sm font-medium leading-snug tracking-wide whitespace-pre-wrap">
               {children}
             </div>
