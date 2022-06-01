@@ -23,17 +23,28 @@ export const carriers = [
   //     </div>
   //   )
   // },
-  // {
-  //   icon: IconImage.COMPANY,
-  //   title: 'CyberAgent, Inc.',
-  //   from_date: 'Jun 2022',
-  //   url: 'https://www.cyberagent.co.jp/en/',
-  //   children: (
-  //     <div>
-  //       Fulltime Front-End Engineering internship at <span><a href="https://cam-inc.co.jp/" className="hover:opacity-50"  target="_blank">CAM</a></span>.
-  //     </div>
-  //   )
-  // },
+  {
+    icon: IconImage.COMPANY,
+    title: 'CyberAgent, Inc.',
+    from_date: 'Jun 2022',
+    to_date: 'Present',
+    url: 'https://www.cyberagent.co.jp/en/',
+    children: (
+      <div>
+        Fulltime Front-End Engineering internship at{' '}
+        <span>
+          <a
+            href="https://cam-inc.co.jp/"
+            className="hover:opacity-50"
+            target="_blank"
+          >
+            CAM
+          </a>
+        </span>
+        .
+      </div>
+    ),
+  },
   {
     icon: IconImage.SCHOOL,
     title: 'California State University, Monterey Bay',
