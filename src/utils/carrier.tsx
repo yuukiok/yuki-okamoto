@@ -12,26 +12,37 @@ export const carriers = [
   //     </div>
   //   )
   // },
-  // {
-  //   icon: IconImage.COMPANY,
-  //   title: 'Rakuten Group, Inc.',
-  //   from_date: 'July 2022',
-  //   url: 'http://global.rakuten.com/corp/',
-  //   children: (
-  //     <div>
-  //       Fulltime Back-End Engineering internship at <span><a href="https://payment.rakuten.co.jp/en/" className="hover:opacity-50" target="_blank">Rakuten Payment</a></span>.
-  //     </div>
-  //   )
-  // },
+  {
+    icon: IconImage.COMPANY,
+    title: 'Rakuten Group, Inc.',
+    from_date: 'July 2022',
+    to_date: 'Present',
+    url: 'http://global.rakuten.com/corp/',
+    children: (
+      <div>
+        Back-End Engineer at{' '}
+        <span>
+          <a
+            href="https://payment.rakuten.co.jp/en/"
+            className="hover:opacity-50"
+            target="_blank"
+          >
+            Rakuten Payment
+          </a>
+        </span>
+        .
+      </div>
+    ),
+  },
   {
     icon: IconImage.COMPANY,
     title: 'CyberAgent, Inc.',
     from_date: 'Jun 2022',
-    to_date: 'Present',
+    to_date: 'Jun 2022',
     url: 'https://www.cyberagent.co.jp/en/',
     children: (
       <div>
-        Fulltime Front-End Engineering internship at{' '}
+        Front-End Engineer at{' '}
         <span>
           <a
             href="https://cam-inc.co.jp/"
