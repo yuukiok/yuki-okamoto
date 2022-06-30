@@ -19,16 +19,12 @@ import {
   SiMongodb,
   SiC,
   SiJava,
-  SiAndroid,
+  SiSpringboot,
+  SiDocker,
+  SiKubernetes,
   SiSwift,
-  SiIos,
-  SiWordpress,
-  SiNpm,
-  SiYarn,
-  SiGithub,
-  SiBitbucket,
 } from 'react-icons/si'
-import { FaReact, FaSourcetree } from 'react-icons/fa'
+import { FaReact } from 'react-icons/fa'
 
 export const Skills: NextPage = () => {
   const size = 64
@@ -37,6 +33,10 @@ export const Skills: NextPage = () => {
     { skill: 'TypeScript', imageurl: <SiTypescript size={size} /> },
     { skill: 'React', imageurl: <FaReact size={size} /> },
     { skill: 'Next.js', imageurl: <SiNextdotjs size={size} /> },
+    { skill: 'Java', imageurl: <SiJava size={size} /> },
+    { skill: 'SpringBoot', imageurl: <SiSpringboot size={size} /> },
+    { skill: 'Docker', imageurl: <SiDocker size={size} /> },
+    { skill: 'Kubernetes', imageurl: <SiKubernetes size={size} /> },
     { skill: 'NestJS', imageurl: <SiNestjs size={size} /> },
     { skill: 'GraphQL', imageurl: <SiGraphql size={size} /> },
     { skill: 'Jamstack', imageurl: <SiJamstack size={size} /> },
@@ -49,18 +49,9 @@ export const Skills: NextPage = () => {
     { skill: 'Python', imageurl: <SiPython size={size} /> },
     { skill: 'MongoDB', imageurl: <SiMongodb size={size} /> },
     { skill: 'C', imageurl: <SiC size={size} /> },
-    { skill: 'Java', imageurl: <SiJava size={size} /> },
-    { skill: 'Android', imageurl: <SiAndroid size={size} /> },
     { skill: 'Swift', imageurl: <SiSwift size={size} /> },
-    { skill: 'Ios', imageurl: <SiIos size={size} /> },
-    { skill: 'Wordpress', imageurl: <SiWordpress size={size} /> },
     { skill: 'Vercel', imageurl: <SiVercel size={size} /> },
     { skill: 'Heroku', imageurl: <SiHeroku size={size} /> },
-    { skill: 'Npm', imageurl: <SiNpm size={size} /> },
-    { skill: 'Yarn', imageurl: <SiYarn size={size} /> },
-    { skill: 'Github', imageurl: <SiGithub size={size} /> },
-    { skill: 'Bitbucket', imageurl: <SiBitbucket size={size} /> },
-    { skill: 'Sourcetree', imageurl: <FaSourcetree size={size} /> },
   ]
   return (
     <div className="flex overflow-x-auto">
