@@ -38,7 +38,7 @@ export const carriers = [
     icon: IconImage.COMPANY,
     title: 'CyberAgent, Inc.',
     from_date: 'Jun 2022',
-    to_date: 'Jun 2022',
+    to_date: '',
     url: 'https://www.cyberagent.co.jp/en/',
     children: (
       <div>
