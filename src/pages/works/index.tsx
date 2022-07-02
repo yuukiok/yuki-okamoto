@@ -42,25 +42,27 @@ const Index: NextPage<Props> = ({ work }) => {
           {works &&
             works.map((work: Work) => {
               return (
-                <li key={work.id} className="hover:scale-110 mx-auto">
-                  <Link href={work.url}>
-                    <a target="_blank">
-                      <Image
-                        loader={GraphCMSImageLoader}
-                        src={work.image.url}
-                        priority={true}
-                        quality={10}
-                        width={300}
-                        height={200}
-                        className="rounded-lg"
-                        alt="portfolio image"
-                      />
-                      <div className="font-semibold text-lg text-center">
-                        {work.title}
+                <Link key={work.id} href={work.url}>
+                  <a target="_blank" className="mx-auto w-full group">
+                    <div className="overflow-hidden rounded-md">
+                      <div className="group-hover:scale-110 group-hover:opacity-80">
+                        <Image
+                          loader={GraphCMSImageLoader}
+                          src={work.image.url}
+                          priority={true}
+                          quality={10}
+                          width={300}
+                          height={200}
+                          alt="portfolio image"
+                          layout="responsive"
+                        />
                       </div>
-                    </a>
-                  </Link>
-                </li>
+                    </div>
+                    <p className="font-semibold text-lg text-center">
+                      {work.title}
+                    </p>
+                  </a>
+                </Link>
               )
             })}
         </ul>
