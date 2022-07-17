@@ -1,10 +1,11 @@
-import { NextPage } from 'next'
-import { Skill } from '../atoms/skill'
+import { NextPage } from 'next';
+import { Skill } from '../atoms/skill';
 import {
   SiJavascript,
   SiTypescript,
   SiNextdotjs,
   SiNestjs,
+  SiExpress,
   SiHtml5,
   SiCss3,
   SiTailwindcss,
@@ -23,21 +24,22 @@ import {
   SiDocker,
   SiKubernetes,
   SiSwift,
-} from 'react-icons/si'
-import { FaReact } from 'react-icons/fa'
+} from 'react-icons/si';
+import { FaReact } from 'react-icons/fa';
 
 export const Skills: NextPage = () => {
-  const size = 64
+  const size = 64;
   const skills = [
     { skill: 'JavaScript', imageurl: <SiJavascript size={size} /> },
     { skill: 'TypeScript', imageurl: <SiTypescript size={size} /> },
     { skill: 'React', imageurl: <FaReact size={size} /> },
     { skill: 'Next.js', imageurl: <SiNextdotjs size={size} /> },
-    { skill: 'Java', imageurl: <SiJava size={size} /> },
-    { skill: 'SpringBoot', imageurl: <SiSpringboot size={size} /> },
-    { skill: 'Docker', imageurl: <SiDocker size={size} /> },
-    { skill: 'Kubernetes', imageurl: <SiKubernetes size={size} /> },
+    { skill: 'Express', imageurl: <SiExpress size={size} /> },
     { skill: 'NestJS', imageurl: <SiNestjs size={size} /> },
+    // { skill: 'Java', imageurl: <SiJava size={size} /> },
+    // { skill: 'SpringBoot', imageurl: <SiSpringboot size={size} /> },
+    { skill: 'Docker', imageurl: <SiDocker size={size} /> },
+    // { skill: 'Kubernetes', imageurl: <SiKubernetes size={size} /> },
     { skill: 'GraphQL', imageurl: <SiGraphql size={size} /> },
     { skill: 'Jamstack', imageurl: <SiJamstack size={size} /> },
     { skill: 'HTML 5', imageurl: <SiHtml5 size={size} /> },
@@ -50,9 +52,9 @@ export const Skills: NextPage = () => {
     { skill: 'MongoDB', imageurl: <SiMongodb size={size} /> },
     { skill: 'C', imageurl: <SiC size={size} /> },
     { skill: 'Swift', imageurl: <SiSwift size={size} /> },
-    { skill: 'Vercel', imageurl: <SiVercel size={size} /> },
-    { skill: 'Heroku', imageurl: <SiHeroku size={size} /> },
-  ]
+    // { skill: 'Vercel', imageurl: <SiVercel size={size} /> },
+    // { skill: 'Heroku', imageurl: <SiHeroku size={size} /> },
+  ];
   return (
     <div className="flex overflow-x-auto">
       {skills &&
@@ -60,5 +62,5 @@ export const Skills: NextPage = () => {
           <Skill key={skill.skill} skill={skill.skill} url={skill.imageurl} />
         ))}
     </div>
-  )
-}
+  );
+};
