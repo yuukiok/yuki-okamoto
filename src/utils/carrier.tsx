@@ -1,22 +1,18 @@
-import { IconImage } from '../components/molecules/time'
+import { IconImage } from '../components/molecules/time';
 export const carriers = [
-  // {
-  //   icon: IconImage.COMPANY,
-  //   title: 'WealthPark, Inc.',
-  //   from_date: 'Aug 2022',
-  //   to_date: 'Present',
-  //   url: 'https://wealth-park.com/en/lp-product-us/',
-  //   children: (
-  //     <div>
-  //       Front-End Engineer.
-  //     </div>
-  //   )
-  // },
+  {
+    icon: IconImage.COMPANY,
+    title: 'WealthPark, Inc.',
+    from_date: 'Aug 2022',
+    to_date: 'Present',
+    url: 'https://wealth-park.com/en/lp-product-us/',
+    children: <div>Software Engineer.</div>,
+  },
   {
     icon: IconImage.COMPANY,
     title: 'Rakuten Group, Inc.',
     from_date: 'July 2022',
-    to_date: 'Present',
+    to_date: '',
     url: 'http://global.rakuten.com/corp/',
     children: (
       <div>
@@ -98,4 +94,4 @@ export const carriers = [
     url: 'https://www2.palomar.edu/',
     children: <div>Community college majoring Computer Science.</div>,
   },
-]
+];
