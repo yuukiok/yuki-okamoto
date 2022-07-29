@@ -13,16 +13,11 @@ import {
   SiGraphql,
   SiJamstack,
   SiFirebase,
-  SiVercel,
-  SiHeroku,
   SiRstudio,
   SiPython,
   SiMongodb,
   SiC,
-  SiJava,
-  SiSpringboot,
   SiDocker,
-  SiKubernetes,
   SiSwift,
 } from 'react-icons/si';
 import { FaReact } from 'react-icons/fa';
@@ -36,10 +31,7 @@ export const Skills: NextPage = () => {
     { skill: 'Next.js', imageurl: <SiNextdotjs size={size} /> },
     { skill: 'Express', imageurl: <SiExpress size={size} /> },
     { skill: 'NestJS', imageurl: <SiNestjs size={size} /> },
-    // { skill: 'Java', imageurl: <SiJava size={size} /> },
-    // { skill: 'SpringBoot', imageurl: <SiSpringboot size={size} /> },
     { skill: 'Docker', imageurl: <SiDocker size={size} /> },
-    // { skill: 'Kubernetes', imageurl: <SiKubernetes size={size} /> },
     { skill: 'GraphQL', imageurl: <SiGraphql size={size} /> },
     { skill: 'Jamstack', imageurl: <SiJamstack size={size} /> },
     { skill: 'HTML 5', imageurl: <SiHtml5 size={size} /> },
@@ -52,8 +44,6 @@ export const Skills: NextPage = () => {
     { skill: 'MongoDB', imageurl: <SiMongodb size={size} /> },
     { skill: 'C', imageurl: <SiC size={size} /> },
     { skill: 'Swift', imageurl: <SiSwift size={size} /> },
-    // { skill: 'Vercel', imageurl: <SiVercel size={size} /> },
-    // { skill: 'Heroku', imageurl: <SiHeroku size={size} /> },
   ];
   return (
     <div className="flex overflow-x-auto">
