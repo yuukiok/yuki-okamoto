@@ -6,7 +6,7 @@ export const carriers = [
     from_date: 'Aug 2022',
     to_date: 'Present',
     url: 'https://wealth-park.com/en/lp-product-us/',
-    children: <div>Software Engineer.</div>,
+    children: <div>Front-End Engineer.</div>,
   },
   {
     icon: IconImage.COMPANY,
