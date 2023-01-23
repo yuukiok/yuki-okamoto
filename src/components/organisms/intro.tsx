@@ -1,10 +1,10 @@
-import { NextPage } from 'next'
-import Image from 'next/image'
-import { SnsIntro, SNS } from '../molecules/snsIntro'
+import { NextPage } from 'next';
+import Image from 'next/legacy/image';
+import { SnsIntro, SNS } from '../molecules/snsIntro';
 
 type Props = {
-  theme: string
-}
+  theme: string;
+};
 
 const Intro: NextPage<Props> = ({ theme }) => {
   return (
@@ -28,12 +28,11 @@ const Intro: NextPage<Props> = ({ theme }) => {
         />
       </div>
       <div className="w-fit mx-auto my-1">
-        <SnsIntro id="@YukiOkamoto0206" theme={theme} snsType={SNS.GitHub} />
-        <SnsIntro id="@yuki-okamoto-ca" theme={theme} snsType={SNS.LinkedIn} />
-        <SnsIntro id="@yuki_0206_cs" theme={theme} snsType={SNS.Twitter} />
+        <SnsIntro theme={theme} snsType={SNS.GitHub} />
+        <SnsIntro theme={theme} snsType={SNS.LinkedIn} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

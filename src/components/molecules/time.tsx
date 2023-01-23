@@ -1,16 +1,16 @@
-import { NextPage } from 'next'
-import Image from 'next/image'
+import { NextPage } from 'next';
+import Image from 'next/legacy/image';
 
 type Props = {
-  theme: string
-  icon: IconImage
-  title: string
-  children: JSX.Element
-  from_date: string
-  to_date?: string
-  url: string
-  isDone?: boolean
-}
+  theme: string;
+  icon: IconImage;
+  title: string;
+  children: JSX.Element;
+  from_date: string;
+  to_date?: string;
+  url: string;
+  isDone?: boolean;
+};
 
 export enum IconImage {
   SCHOOL,
@@ -67,5 +67,5 @@ export const Time: NextPage<Props> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

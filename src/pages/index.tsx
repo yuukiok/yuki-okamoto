@@ -1,30 +1,31 @@
-import { useTheme } from 'next-themes'
-import Hero from '../components/organisms/hero'
-import Intro from '../components/organisms/intro'
-import { Timeline } from '../components/organisms/timeline'
-import { SEOHead } from '../components/organisms/seohead'
-import { useRouter } from 'next/router'
-import { Skills } from '../components/organisms/skills'
-import Spacer from '../components/layout/spacer'
-import Topic from '../components/atoms/topic'
-import { GetStaticProps } from 'next'
-import { client, GET_CURRENT_USER } from '../lib/urqlClient'
-import React, { useEffect } from 'react'
-import WeekContributions from '../components/molecules/weekContributions'
-import Link from 'next/link'
+import { useTheme } from 'next-themes';
+import Hero from '../components/organisms/hero';
+import Intro from '../components/organisms/intro';
+import { Timeline } from '../components/organisms/timeline';
+import { SEOHead } from '../components/organisms/seohead';
+import { useRouter } from 'next/router';
+import { Skills } from '../components/organisms/skills';
+import Spacer from '../components/layout/spacer';
+import Topic from '../components/atoms/topic';
+import { GetStaticProps } from 'next';
+import { client, GET_CURRENT_USER } from '../lib/urqlClient';
+import React, { useEffect } from 'react';
+import WeekContributions from '../components/molecules/weekContributions';
+import Link from 'next/link';
 
 export default function Home({ data }: any) {
-  const { theme } = useTheme()
-  const color = theme == undefined ? 'dark' : theme
-  const router = useRouter()
-  const url = router.asPath
-  const weeksWeed = data.user.contributionsCollection.contributionCalendar.weeks
+  const { theme } = useTheme();
+  const color = theme == undefined ? 'dark' : theme;
+  const router = useRouter();
+  const url = router.asPath;
+  const weeksWeed =
+    data.user.contributionsCollection.contributionCalendar.weeks;
   const totalContributions =
-    data.user.contributionsCollection.contributionCalendar.totalContributions
+    data.user.contributionsCollection.contributionCalendar.totalContributions;
   useEffect(() => {
-    let target = document.getElementById('scroll-inner')
-    target?.scrollTo(10000, 0)
-  }, [])
+    let target = document.getElementById('scroll-inner');
+    target?.scrollTo(10000, 0);
+  }, []);
 
   return (
     <div className="">
@@ -43,13 +44,15 @@ export default function Home({ data }: any) {
         <Topic title="Skill" />
         <Skills />
         <div className="hidden lg:block">
-          <Link href="https://github.com/YukiOkamoto0206">
-            <a target="_blank" className="inline-block	">
-              <Topic
-                title={`${totalContributions} Contributions`}
-                className="my-3"
-              />
-            </a>
+          <Link
+            href="https://github.com/YukiOkamoto0206"
+            className="inline-block"
+            target="_blank"
+          >
+            <Topic
+              title={`${totalContributions} Contributions`}
+              className="my-3"
+            />
           </Link>
           <div className="flex overflow-x-auto" id="scroll-inner">
             {weeksWeed.map((weekWeed: any) => (
@@ -59,15 +62,15 @@ export default function Home({ data }: any) {
         </div>
       </Spacer>
     </div>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await client.query(GET_CURRENT_USER).toPromise()
+  const { data } = await client.query(GET_CURRENT_USER).toPromise();
   return {
     props: {
       data,
     },
     revalidate: 10,
-  }
-}
+  };
+};

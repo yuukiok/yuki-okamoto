@@ -1,36 +1,35 @@
-import { GetStaticProps, NextPage } from 'next'
-import { client_works, GET_WORKS_DATA } from '../../lib/urqlClient'
-import Work from '../../components/organisms/work'
-import Image from 'next/image'
-import Spacer from '../../components/layout/spacer'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { SEOHead } from '../../components/organisms/seohead'
+import { GetStaticProps, NextPage } from 'next';
+import { client_works, GET_WORKS_DATA } from '../../lib/urqlClient';
+import Image from 'next/legacy/image';
+import Spacer from '../../components/layout/spacer';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { SEOHead } from '../../components/organisms/seohead';
 
 function GraphCMSImageLoader({ src, width }: any) {
-  const relativeSrc = (src: any) => src.split('/').pop()
-  return `https://media.graphcms.com/resize=width:${width}/${relativeSrc(src)}`
+  const relativeSrc = (src: any) => src.split('/').pop();
+  return `https://media.graphcms.com/resize=width:${width}/${relativeSrc(src)}`;
 }
 
 type Props = {
-  work: Work[]
-}
+  work: Work[];
+};
 type Work = {
-  id: string
-  title: string
-  url: string
-  image: Image
-}
+  id: string;
+  title: string;
+  url: string;
+  image: Image;
+};
 type Image = {
-  url: string
-  width: number
-  height: number
-}
+  url: string;
+  width: number;
+  height: number;
+};
 
 const Index: NextPage<Props> = ({ work }) => {
-  const works = work
-  const router = useRouter()
-  const url = router.asPath
+  const works = work;
+  const router = useRouter();
+  const url = router.asPath;
   return (
     <>
       <SEOHead title="Yuki Okamoto - Works Page" url={url} />
@@ -42,44 +41,47 @@ const Index: NextPage<Props> = ({ work }) => {
           {works &&
             works.map((work: Work) => {
               return (
-                <Link key={work.id} href={work.url}>
-                  <a target="_blank" className="mx-auto w-full group">
-                    <div className="overflow-hidden rounded-md">
-                      <div className="group-hover:scale-110 group-hover:opacity-80">
-                        <Image
-                          loader={GraphCMSImageLoader}
-                          src={work.image.url}
-                          priority={true}
-                          quality={10}
-                          width={300}
-                          height={200}
-                          alt="portfolio image"
-                          layout="responsive"
-                        />
-                      </div>
+                <Link
+                  key={work.id}
+                  href={work.url}
+                  target="_blank"
+                  className="mx-auto w-full group"
+                >
+                  <div className="overflow-hidden rounded-md">
+                    <div className="group-hover:scale-110 group-hover:opacity-80">
+                      <Image
+                        loader={GraphCMSImageLoader}
+                        src={work.image.url}
+                        priority={true}
+                        quality={10}
+                        width={300}
+                        height={200}
+                        alt="portfolio image"
+                        layout="responsive"
+                      />
                     </div>
-                    <p className="font-semibold text-lg text-center">
-                      {work.title}
-                    </p>
-                  </a>
+                  </div>
+                  <p className="font-semibold text-lg text-center">
+                    {work.title}
+                  </p>
                 </Link>
-              )
+              );
             })}
         </ul>
       </Spacer>
     </>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await client_works.query(GET_WORKS_DATA).toPromise()
-  const work = data.work
+  const { data } = await client_works.query(GET_WORKS_DATA).toPromise();
+  const work = data.work;
   return {
     props: {
       work,
     },
     revalidate: 10,
-  }
-}
+  };
+};
