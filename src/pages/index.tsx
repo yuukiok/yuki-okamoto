@@ -46,9 +46,9 @@ export default function Home({ data }: any) {
         <div className="hidden lg:block">
           <Link
             href="https://github.com/YukiOkamoto0206"
-            rel="noreferrer"
             className="inline-block"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <Topic
               title={`${totalContributions} Contributions`}

@@ -44,9 +44,9 @@ const Index: NextPage<Props> = ({ work }) => {
                 <Link
                   key={work.id}
                   href={work.url}
-                  rel="noreferrer"
                   target="_blank"
                   className="mx-auto w-full group"
+                  rel="noopener noreferrer"
                 >
                   <div className="overflow-hidden rounded-md">
                     <div className="group-hover:scale-110 group-hover:opacity-80">

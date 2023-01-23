@@ -22,6 +22,7 @@ export const carriers = [
             href="https://payment.rakuten.co.jp/en/"
             className="hover:opacity-50"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Rakuten Payment
           </a>
@@ -44,6 +45,7 @@ export const carriers = [
             href="https://cam-inc.co.jp/"
             className="hover:opacity-50"
             target="_blank"
+            rel="noopener noreferrer"
           >
             CAM
           </a>
