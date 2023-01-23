@@ -44,6 +44,7 @@ const Index: NextPage<Props> = ({ work }) => {
                 <Link
                   key={work.id}
                   href={work.url}
+                  rel="noreferrer"
                   target="_blank"
                   className="mx-auto w-full group"
                 >
