@@ -1,12 +1,20 @@
-import { IconImage } from '../components/molecules/time';
-export const carriers = [
+import { IconImage } from '../components/molecules/time'
+export const internships = [
+  {
+    icon: IconImage.COMPANY,
+    title: 'Citigroup Inc.',
+    from_date: 'Jun 2023',
+    to_date: 'Present',
+    url: 'https://www.citigroup.jp/en/',
+    children: <div>Summer Analyst in the Technology department.</div>,
+  },
   {
     icon: IconImage.COMPANY,
     title: 'WealthPark, Inc.',
     from_date: 'Aug 2022',
-    to_date: 'Present',
+    to_date: 'May 2023',
     url: 'https://wealth-park.com/en/lp-product-us/',
-    children: <div>Front-End Engineer.</div>,
+    children: <div>Frontend Engineer.</div>,
   },
   {
     icon: IconImage.COMPANY,
@@ -16,7 +24,7 @@ export const carriers = [
     url: 'http://global.rakuten.com/corp/',
     children: (
       <div>
-        Back-End Engineer at{' '}
+        Backend Engineer at{' '}
         <span>
           <a
             href="https://payment.rakuten.co.jp/en/"
@@ -39,7 +47,7 @@ export const carriers = [
     url: 'https://www.cyberagent.co.jp/en/',
     children: (
       <div>
-        Front-End Engineer at{' '}
+        Frontend Engineer at{' '}
         <span>
           <a
             href="https://cam-inc.co.jp/"
@@ -55,6 +63,17 @@ export const carriers = [
     ),
   },
   {
+    icon: IconImage.COMPANY,
+    title: 'Crunchtimer, Inc.',
+    from_date: 'Jun 2020',
+    to_date: 'May 2022',
+    url: 'https://www.crunchtimer.jp/',
+    children: <div>Frontend and Mobile Application Engineer.</div>,
+  },
+]
+
+export const schools = [
+  {
     icon: IconImage.SCHOOL,
     title: 'California State University, Monterey Bay',
     from_date: 'Jan 2022',
@@ -68,32 +87,30 @@ export const carriers = [
     ),
   },
   {
-    icon: IconImage.COMPANY,
-    title: 'dKomplex, Inc.',
-    from_date: 'Feb 2022',
-    to_date: 'May 2022',
-    url: 'https://www.dkomplex.com/',
-    children: (
-      <div>
-        Data Scientist to support the group of a veteran-owned startup by
-        converting business processes and requirements into software updates.
-      </div>
-    ),
-  },
-  {
-    icon: IconImage.COMPANY,
-    title: 'Crunchtimer, Inc.',
-    from_date: 'Jun 2020',
-    to_date: 'May 2022',
-    url: 'https://www.crunchtimer.jp/',
-    children: <div>Front-End and Mobile Application Engineer.</div>,
-  },
-  {
     icon: IconImage.SCHOOL,
     title: 'Palomar College',
     from_date: 'Aug 2019',
     to_date: 'Dec 2021',
     url: 'https://www2.palomar.edu/',
-    children: <div>Community college majoring Computer Science.</div>,
+    children: <div>Community college majoring in Computer Science.</div>,
   },
-];
+]
+
+export const volunteers = [
+  {
+    icon: IconImage.COMPANY,
+    title: 'LATIN ADVOCACY NETWORK.',
+    from_date: 'Feb 2023',
+    to_date: 'May 2023',
+    url: 'https://www.latinan.org/',
+    children: <div>Backend Engineer.</div>,
+  },
+  {
+    icon: IconImage.COMPANY,
+    title: 'dKomplex, Inc.',
+    from_date: 'Feb 2022',
+    to_date: 'May 2022',
+    url: 'https://www.dkomplex.com/',
+    children: <div>Data Scientist.</div>,
+  },
+]
