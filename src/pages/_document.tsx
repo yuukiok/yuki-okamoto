@@ -12,6 +12,13 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="snowman.png" />
+          <meta property="og:title" content="Yuki Okamoto | Portfolio Site" />
+          <meta
+            property="og:description"
+            content="Welcome to Yuki Okamoto's Portfolio Site. Explore my work, skills, and professional journey."
+          />
+          <meta property="og:image" content="snowman.png" />
+          <meta property="og:url" content="https://yukiok.com/" />
         </Head>
         <body>
           <Main />
