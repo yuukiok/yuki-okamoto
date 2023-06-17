@@ -17,7 +17,6 @@ class MyDocument extends Document {
             property="og:description"
             content="Welcome to Yuki Okamoto's Portfolio Site. Explore my work, skills, and professional journey."
           />
-          <meta property="og:image" content="opengraph-image.jpg" />
           <meta property="og:url" content="https://yukiok.com/" />
         </Head>
         <body>
