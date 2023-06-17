@@ -26,7 +26,7 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
         content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
       />
       <meta property="og:locale" content="en" />
-      <meta property="og:title" content={title} />
+      {/* <meta property="og:title" content={title} />
       <meta property="og:url" content={`https://yukiok.com${url}`} />
       <meta property="og:site_name" content="Yuki Okamoto's Portfolio" />
       <meta property="og:type" content="website" />
@@ -48,7 +48,7 @@ export const SEOHead: NextPage<Props> = ({ title, description, url }) => {
           <meta property="og:description" content={defaultDescription} />
           <meta name="twitter:description" content={defaultDescription} />
         </>
-      )}
+      )} */}
     </Head>
   )
 }
