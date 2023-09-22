@@ -4,7 +4,7 @@ export const internships = [
     icon: IconImage.COMPANY,
     title: 'Citigroup Inc.',
     from_date: 'Jun 2023',
-    to_date: 'Present',
+    to_date: 'Aug 2023',
     url: 'https://www.citigroup.jp/en/',
     children: <div>Summer Analyst in the Technology department.</div>,
   },
@@ -97,6 +97,22 @@ export const schools = [
 ]
 
 export const volunteers = [
+  {
+    icon: IconImage.COMPANY,
+    title: 'MBARI',
+    from_date: 'Aug 2023',
+    to_date: 'Present',
+    url: 'https://www.mbari.org/',
+    children: <div>Software Engineer.</div>,
+  },
+  {
+    icon: IconImage.COMPANY,
+    title: 'Greenfield',
+    from_date: 'Aug 2023',
+    to_date: 'Present',
+    url: 'https://ci.greenfield.ca.us/191/Greenfield-Science-Workshop',
+    children: <div>Software Engineer.</div>,
+  },
   {
     icon: IconImage.COMPANY,
     title: 'LATIN ADVOCACY NETWORK.',
